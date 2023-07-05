@@ -32,7 +32,7 @@ export default function Home() {
                     ? (
                         <Video
                             className="object-cover h-full w-full pt-[5em]"
-                            source="/dist/video/paris_manga.mp4"
+                            source="/dist/video/paris_manga.webm"
                         />
                     )
 

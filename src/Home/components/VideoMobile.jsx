@@ -1,3 +1,4 @@
+/* eslint-disable react/no-danger */
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
 import { useSettings } from '../../context/ConfigurationContext';
