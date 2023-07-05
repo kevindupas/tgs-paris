@@ -1,0 +1,15 @@
+import React from 'react';
+
+function Loader() {
+    return (
+        <div>
+
+            <div className="fixed w-screen h-screen bg-[url('/dist/images/pattern-dark.jpeg')] flex z-50 inset-0 flex-col items-center justify-center">
+                <img className="w-96 animate-pulse" src="../dist/images/logo.png" alt="logo" />
+            </div>
+
+        </div>
+    );
+}
+
+export default Loader;
