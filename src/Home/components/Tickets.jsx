@@ -80,8 +80,14 @@ export default function Tickets() {
                                 prices && (
                                     <>
                                         {prices.map((price) => (
-                                            <div key={price.id} className={clsx('border-2 bg-gray-100 shadow-lg h-full w-full rounded-lg scale-100 hover:scale-110 ease-in duration-200', price.name === 'VIP' ? 'border-[#E97665]' : '')}>
-                                                { price.name === 'VIP' && (<span className="absolute flex -top-3 rounded-full px-3 left-0 w-36 right-0 mx-auto justify-center items-center text-white bg-[#E97665]">Quantité limitée</span>) }
+                                            <div key={price.id} className={clsx('border-2 bg-gray-100 shadow-lg h-full w-full rounded-lg scale-100 hover:scale-110 ease-in duration-200', ['VIP', 'BILLET VIP', 'BILLET VIP PREMIUM'].includes(price.name) ? 'border-[#E97665]' : '')}>
+                                                {
+                                                    ['VIP', 'BILLET VIP', 'BILLET VIP PREMIUM'].includes(price.name) && (
+                                                        <span className="absolute flex -top-3 rounded-full px-3 left-0 w-36 right-0 mx-auto justify-center items-center text-white bg-[#E97665]">
+                                                            Quantité limitée
+                                                        </span>
+                                                    )
+                                                }
                                                 <div className="p-6">
                                                     <h2 className="text-lg leading-6 font-medium text-black uppercase text-center">{price.name}</h2>
                                                     <p className="mt-4 text-center">
