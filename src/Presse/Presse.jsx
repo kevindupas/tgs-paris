@@ -63,14 +63,14 @@ export default function Presse() {
                 <GlobalStyle />
                 <div className="bg-[#4FC0F0] pt-32">
                     <h1 className="text-left text-white text-2xl bg-[#F27B7B] w-fit px-6 font-bold py-1">{presses.first_title}</h1>
-                    <div className="p-6" dangerouslySetInnerHTML={{ __html: presses.first_content }} />
+                    <div className="p-6 w-full overflow-x-hidden" dangerouslySetInnerHTML={{ __html: presses.first_content }} />
                 </div>
 
                 <div className="bg-[#3575A2] text-white">
                     <div className="flex justify-end">
                         <h1 className="text-right text-white text-2xl bg-[#F27B7B] w-max px-6 font-bold py-1">{presses.second_title}</h1>
                     </div>
-                    <div className="text-justify p-6" dangerouslySetInnerHTML={{ __html: presses.second_content }} />
+                    <div className="text-justify p-6  w-full overflow-x-hidden" dangerouslySetInnerHTML={{ __html: presses.second_content }} />
                 </div>
 
                 <div className="bg-[#4FC0F0]">

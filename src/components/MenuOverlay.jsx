@@ -162,6 +162,17 @@ export default function MenuOverlay({ navbarOpen, setNavbarOpen }) {
                             </div>
                             <div className="flex">
                                 <Link
+                                    to="photos"
+                                    className="relative flex text-[30px] lg:text-[68px] font-microgramma tracking-[0.566667px] leading-[.95] uppercase menu__item-link hover:text-[#E97665]"
+                                    onClick={() => {
+                                        setNavbarOpen(false);
+                                    }}
+                                >
+                                    photos invités
+                                </Link>
+                            </div>
+                            <div className="flex">
+                                <Link
                                     to="billetterie"
                                     className="relative flex text-[30px] lg:text-[68px] font-microgramma tracking-[0.566667px] leading-[.95] uppercase menu__item-link hover:text-[#E97665]"
                                     onClick={() => {
