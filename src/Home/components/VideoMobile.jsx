@@ -37,21 +37,18 @@ export default function Video() {
             <div
                 className="absolute bottom-0 left-0 mx-auto top-0 md:right-[calc(50%-300px)] lg:right-[calc(50%-516px)]"
             >
-                <div
-                    className="relative h-full w-full blur-[4px]"
-                    dangerouslySetInnerHTML={{
-                        __html: `<video
+                <div className="relative h-full w-full blur-[4px]">
+                    <video
                         loop
                         muted
-                        autoplay
-                        playsinline
-                        class="object-cover h-full w-full pt-[5em]"
+                        autoPlay
+                        playsInline
+                        className="object-cover h-full w-full pt-[5em]"
                     >
-                        <source src='/dist/video/paris_manga.webm' type='video/webm' />
-                        <source src='/dist/video/paris_manga.mp4' type='video/mp4' />
-                    </video>`,
-                    }}
-                />
+                        <source src="/dist/video/paris_manga.webm" type="video/webm" />
+                        <source src="/dist/video/paris_manga.mp4" type="video/mp4" />
+                    </video>
+                </div>
             </div>
         </section>
     );
