@@ -46,7 +46,7 @@ export default function Video() {
                                 autoplay
                                 playsinline
                                 type="video/mp4"
-                                src='/dist/video/paris_manga.mp4'
+                                src='/dist/video/paris_manga.webm'
                                 class='object-cover h-full w-full pt-[5em]'
                             />`,
                     }}
