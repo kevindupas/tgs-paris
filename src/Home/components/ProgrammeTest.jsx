@@ -54,7 +54,7 @@ export default function ProgrammeTest({
                 >
                     {/* <button type="button" onClick={() => inputEl.slidePrev()}>Prev</button>
                         <button type="button" onClick={() => inputEl.slideNext()}>Next</button> */}
-                    {invites && invites.some((data) => data.forward?.length) ? (
+                    {invites && invites.some((data) => data.forward?.length !== 0) ? (
                         <Carousel>
                             {invites && invites.map((data) => {
                                 if (data.forward === true && data.published_at !== null && data.published_at < dayjs().format('YYYY-MM-DD H:s')) {

@@ -46,7 +46,7 @@ export default function InviteTest({
                 <div
                     className="w-full lg:w-full h-full flex justify-center items-center relative"
                 >
-                    {invites && invites.some((data) => data.forward?.length) ? (
+                    {invites && invites.some((data) => data.forward?.length !== 0) ? (
                         <Carousel>
                             {invites.map((data) => {
                                 if (data.forward === true && data.published_at !== null && data.published_at < dayjs().format('YYYY-MM-DD H:s')) {
