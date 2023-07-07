@@ -63,7 +63,6 @@ export default function ArticlesDetails() {
             .then((res) => res.json())
             .then(
                 (data) => {
-                    console.log(data);
                     setIsLoaded(true);
                     setDetails(data.data);
                     setDetailCategory(data.data.category);

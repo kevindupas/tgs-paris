@@ -29,7 +29,6 @@ export default function InfosPratiquesDetails() {
             .then((res) => res.json())
             .then(
                 (data) => {
-                    console.log(data);
                     setIsLoaded(true);
                     setDetails(data.data);
                 },

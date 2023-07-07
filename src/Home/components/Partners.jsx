@@ -65,8 +65,6 @@ export default function PartnerTest() {
     const falseElements = !!partners && partners.filter((element) => element.sponsors === false);
     const numberOfFalseElements = falseElements.length;
 
-    console.log(numberOfFalseElements <= 3 ? 'GRID' : 'SLIDER'); // affiche 3
-
     const settings = {
         dots:           false,
         arrows:         true,

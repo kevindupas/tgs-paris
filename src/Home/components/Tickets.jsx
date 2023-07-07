@@ -41,8 +41,6 @@ export default function Tickets() {
             );
     }, []);
 
-    // console.log(prices);
-
     if (error) {
         return (
             <div>

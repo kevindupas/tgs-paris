@@ -27,7 +27,6 @@ export default function Newsletter() {
             } else if (!response.ok) {
                 const validation = await response.json();
                 setErrors(validation.errors);
-                console.log(validation.errors);
             }
         });
     }

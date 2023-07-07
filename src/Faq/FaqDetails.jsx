@@ -29,7 +29,6 @@ export default function FaqDetails() {
             .then((res) => res.json())
             .then(
                 (data) => {
-                    console.log(data);
                     setIsLoaded(true);
                     setDetails(data.data);
                 },

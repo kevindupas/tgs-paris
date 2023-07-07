@@ -43,8 +43,6 @@ export default function InfosPratiques() {
 
     const sortedData = _.sortBy(infos, 'sorting');
 
-    console.log(sortedData);
-
     if (error) {
         return (
             <div>

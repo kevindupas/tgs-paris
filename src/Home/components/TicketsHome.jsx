@@ -37,8 +37,6 @@ export default function TicketsHome() {
             );
     }, []);
 
-    // console.log(prices);
-
     if (error) {
         return (
             <div>
