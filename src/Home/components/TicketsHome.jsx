@@ -3,7 +3,7 @@
 import clsx from 'clsx';
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Fade, Slide } from 'react-awesome-reveal';
+import { Slide } from 'react-awesome-reveal';
 import Loader from '../../components/Loader';
 import { SALON_ID, URL } from '../../utils/config';
 

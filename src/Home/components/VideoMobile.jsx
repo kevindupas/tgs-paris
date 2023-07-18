@@ -45,7 +45,6 @@ export default function Video() {
                         playsInline
                         className="object-cover h-full w-full pt-[5em]"
                     >
-                        <source src="/dist/video/paris_manga.webm" type="video/webm" />
                         <source src="/dist/video/paris_manga.mp4" type="video/mp4" />
                     </video>
                 </div>
