@@ -76,7 +76,7 @@ export default function Infos() {
                     {' '}
                     <Slide direction="right" triggerOnce>
                         <div className="discoverWrapButton">
-                            <a href="https://www.youtube.com/user/tgsevenements" target="_blank" className="wrapButton bg-white hover:bg-blue-400  text-[#E97665]  hover:text-white " rel="noreferrer">
+                            <a href="https://www.youtube.com/@ParisMangaSciFiShow" target="_blank" className="wrapButton bg-white hover:bg-blue-400  text-[#E97665]  hover:text-white " rel="noreferrer">
                                 <span className="font-bold uppercase">Découvrir</span>
                                 {' '}
                             </a>
