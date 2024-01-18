@@ -4,6 +4,7 @@ import { createGlobalStyle } from 'styled-components';
 import useScript from '../utils/useScript';
 import { SALON_ID, URL } from '../utils/config';
 import Loader from '../components/Loader';
+import { useSettings } from '../context/ConfigurationContext';
 
 const GlobalStyle = createGlobalStyle`
   ul {
@@ -14,10 +15,13 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export default function Presse() {
+    const { config } = useSettings();
     useScript(`https://widget.weezevent.com/weez.js?nnn=${Date.now()}`);
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [presses, setPresses] = useState(false);
+
+    if (!config || Object.entries(config).length === 0) return null;
 
     useEffect(() => {
         const options = {
@@ -86,10 +90,10 @@ export default function Presse() {
                             title="Logiciel billetterie en ligne"
                             href="https://weezevent.com/?c=sys_widget"
                             className="weezevent-widget-integration"
-                            data-src="https://widget.weezevent.com/ticket/E1072389/?code=45892&locale=fr-FR&width_auto=1&color_primary=00AEEF"
+                            data-src={`https://widget.weezevent.com/ticket/${presses.ticket_link}/?code=${presses.second_ticket_link}&locale=fr-FR&width_auto=1&color_primary=00AEEF`}
                             data-width="650"
                             data-height="600"
-                            data-id="1072389"
+                            data-id={presses.ticket_link}
                             data-resize="1"
                             data-width_auto="1"
                             data-noscroll="0"
