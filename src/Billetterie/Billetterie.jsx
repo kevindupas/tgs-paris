@@ -31,7 +31,7 @@ export default function Billetterie() {
                                     title="Logiciel billetterie en ligne"
                                     href="https://weezevent.com/?c=sys_widget"
                                     className="weezevent-widget-integration"
-                                    data-src={`https://widget.weezevent.com/ticket/E${config.ticket_link}/?code=${config.second_ticket_link}&locale=fr-FR&width_auto=1&color_primary=00AEEF`}
+                                    data-src={`https://widget.weezevent.com/ticket/${config.ticket_link}/?code=${config.second_ticket_link}&locale=fr-FR&width_auto=1&color_primary=00AEEF`}
                                     data-width="650"
                                     data-height="600"
                                     data-id={config.ticket_link}
