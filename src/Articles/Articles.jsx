@@ -45,19 +45,11 @@ export default function Articles({ categoryName, categories }) {
         setActiveTab('Tous');
     }, [categories]);
 
-    const getPostsToDisplay = () => {
-        const postsToDisplay = posts.filter((currentElem) => activeTab === 'Tous' || currentElem.tag.name === activeTab);
-        if (categoryName === 'Exposants') {
-            postsToDisplay.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
-        }
-        return postsToDisplay;
-    };
+    const getPostsToDisplay = () => posts.filter((post) => activeTab === 'Tous' || (post.tag && post.tag.name === activeTab));
 
     const tagList = [
         'Tous',
-        ...new Set(
-            posts.map((currElem) => currElem.tag.name),
-        ),
+        ...new Set(posts.filter((post) => post.tag).map((post) => post.tag.name)),
     ];
 
     if (error) {
@@ -67,6 +59,10 @@ export default function Articles({ categoryName, categories }) {
                 {error.message}
             </div>
         );
+    }
+
+    if (!isLoaded) {
+        return <Loader />;
     }
     return (
         <>
