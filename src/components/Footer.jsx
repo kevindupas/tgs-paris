@@ -3,6 +3,7 @@ import dayjs from 'dayjs';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSettings } from '../context/ConfigurationContext';
+import EmailModal from './EmailModal';
 // import { URL } from '../utils/config';
 
 function Footer() {
@@ -35,8 +36,11 @@ function Footer() {
                         <Link to="cgu" className="text-base text-white font-semibold"> Conditions générales </Link>
                     </div>
 
+                    {/* <div className="px-5 py-2">
+                        <a href="mailto:contact@tgsevents.com" className="text-base text-white font-semibold"> Contactez-nous </a>
+                    </div> */}
                     <div className="px-5 py-2">
-                        <a href="mailto:contact@parismanga.fr" className="text-base text-white font-semibold"> Contactez-nous </a>
+                        <EmailModal link="contact@tgsevents.com" className="text-base text-white font-semibold">Contactez-nous</EmailModal>
                     </div>
                 </nav>
                 <div className="mt-8 flex justify-center space-x-6">

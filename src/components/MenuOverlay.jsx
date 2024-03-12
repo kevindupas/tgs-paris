@@ -193,7 +193,7 @@ export default function MenuOverlay({ navbarOpen, setNavbarOpen }) {
                         <div className="flex justify-center items-center w-full list-none pl-0 m-0 mb-[37px] lg:mb-0">
                             <div className="mr-[20px] pr-[38px] relative footer-overlay">
                                 <a
-                                    href="mailto:contact@parismanga.fr"
+                                    href="mailto:contact@tgsevents.com"
                                     target="_blank"
                                     className="font-tungstenb_semibold font-semibold text-[40px] lg:text-[65px] leading-none uppercase artiste"
                                     rel="noreferrer"
