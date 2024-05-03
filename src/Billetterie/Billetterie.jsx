@@ -8,7 +8,7 @@ import useScript from '../utils/useScript';
 
 export default function Billetterie() {
     const { config } = useSettings();
-    useScript(`https://widget.weezevent.com/weez.js?nnn=${Date.now()}`);
+    useScript(`https://www.billetweb.fr/js/export.js?nnn=${Date.now()}`);
 
     if (!config || Object.entries(config).length === 0) return null;
 
@@ -28,23 +28,19 @@ export default function Billetterie() {
                                 id="div_id"
                             >
                                 <a
-                                    title="Logiciel billetterie en ligne"
-                                    href="https://weezevent.com/?c=sys_widget"
-                                    className="weezevent-widget-integration"
-                                    data-src={`https://widget.weezevent.com/ticket/${config.ticket_link}/?code=${config.second_ticket_link}&locale=fr-FR&width_auto=1&color_primary=00AEEF`}
-                                    data-width="650"
-                                    data-height="600"
+                                    title="Vente de billets en ligne"
+                                    href={`https://www.billetweb.fr/shop.php?event=${config.ticket_link}`}
+                                    className="shop_frame"
+                                    target="_blank"
+                                    data-src={`https://www.billetweb.fr/shop.php?event=${config.ticket_link}`}
+                                    data-max-width="100%"
+                                    data-initial-height="600"
+                                    data-scrolling="no"
                                     data-id={config.ticket_link}
                                     data-resize="1"
-                                    data-width_auto="1"
-                                    data-noscroll="0"
-                                    data-use-container="yes"
-                                    data-type="neo"
-                                    target="_blank"
                                     rel="noreferrer"
                                 >
-                                    Billetterie Weezevent
-
+                                    Vente de billets en ligne
                                 </a>
                             </div>
 

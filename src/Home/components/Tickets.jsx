@@ -134,7 +134,7 @@ export default function Tickets() {
                                                     {/* <h3 className="text-xs font-medium text-white tracking-wide uppercase">Whats included</h3> */}
                                                     <ul className="space-y-2">
                                                         {price.pricings.map((pricing) => (
-                                                            <li className="flex space-x-3">
+                                                            <li className="flex space-x-3" key={pricing.id}>
                                                                 <svg
                                                                     className="flex-shrink-0 h-5 w-5 text-green-500"
                                                                     xmlns="http://www.w3.org/2000/svg"
