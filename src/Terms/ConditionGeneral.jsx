@@ -18,6 +18,9 @@ export default function ConditionGeneral() {
                 <div className="prose prose-lg prose-indigo mx-auto mt-6 text-gray-500">
                     <div dangerouslySetInnerHTML={{ __html: config.cgu }} />
                 </div>
+                <div className="grid grid-cols-4" />
+                <div className="grid grid-cols-5" />
+                <div className="grid grid-cols-6" />
             </div>
         </div>
     );
