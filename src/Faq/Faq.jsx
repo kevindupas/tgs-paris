@@ -17,7 +17,7 @@ export default function Faq() {
   ReactGA.send({
     hitType: "pageview",
     page: "/faqs",
-    title: "FAQS",
+    title: "FAQs",
   });
 
   useEffect(() => {
