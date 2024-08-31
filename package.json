@@ -1,5 +1,5 @@
 {
-  "name": "tgs-springbreak",
+  "name": "paris-manga",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -30,6 +30,7 @@
     "react": "^18.2.0",
     "react-awesome-reveal": "^4.2.4",
     "react-dom": "^18.2.0",
+    "react-ga4": "^2.1.0",
     "react-router-dom": "^6.8.2",
     "react-slick": "^0.29.0",
     "react-youtube": "^10.1.0",
@@ -52,5 +53,4 @@
     "postcss": "^8.4.21",
     "vite": "^4.1.0"
   }
-  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
 }
