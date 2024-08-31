@@ -1,7 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React, { useState } from "react";
 
-import ReactGA from "react-ga4";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Articles from "./Articles/Articles";
 import ArticlesDetails from "./Articles/ArticlesDetails";
@@ -39,7 +38,7 @@ export default function Routing() {
 
   if (!config || Object.entries(config).length === 0) return null;
 
-  ReactGA.initialize("G-TKTPJYEGVD");
+  //   ReactGA.initialize("G-TKTPJYEGVD");
 
   return (
     <BrowserRouter>
