@@ -3,7 +3,6 @@
 /* eslint-disable no-unused-vars */
 import clsx from "clsx";
 import React, { useEffect, useState } from "react";
-import ReactGA from "react-ga4";
 import CategoryImage from "../components/CategoryImage";
 import Loader from "../components/Loader";
 import { SALON_ID, URL } from "../utils/config";
@@ -17,11 +16,11 @@ export default function Articles({ categoryName, categories, namePath }) {
   const [activeTab, setActiveTab] = useState("Tous");
   const isDesktop = useMedia("(min-width: 900px)");
 
-  ReactGA.send({
-    hitType: "pageview",
-    page: namePath,
-    title: categoryName,
-  });
+  //   ReactGA.send({
+  //     hitType: "pageview",
+  //     page: namePath,
+  //     title: categoryName,
+  //   });
 
   useEffect(() => {
     const options = {
