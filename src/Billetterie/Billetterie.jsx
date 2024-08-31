@@ -15,8 +15,8 @@ export default function Billetterie(namePath, categoryName) {
 
   ReactGA.send({
     hitType: "pageview",
-    page: namePath,
-    title: categoryName,
+    page: "/billetterie",
+    title: "Billetterie",
   });
 
   return (

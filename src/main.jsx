@@ -8,6 +8,7 @@ import Routing from "./Routing";
 
 const TRACKING_ID = "G-TKTPJYEGVD";
 ReactGA.initialize(TRACKING_ID);
+ReactGA.send("pageview");
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
