@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ReactGA from "react-ga4";
 import { createGlobalStyle } from "styled-components";
 import Loader from "../components/Loader";
 import { SALON_ID, URL } from "../utils/config";
@@ -17,6 +18,12 @@ function PhotosInvites() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [photos, setPhotos] = useState(false);
+
+  ReactGA.send({
+    hitType: "pageview",
+    page: "/photos",
+    title: "Photos Invités",
+  });
 
   useEffect(() => {
     const options = {
