@@ -54,7 +54,11 @@ export default function Routing() {
           <Route
             path="invites"
             element={
-              <Articles categories={INVITE_CATEGORY} categoryName="Invités" />
+              <Articles
+                categories={INVITE_CATEGORY}
+                categoryName="Invités"
+                namePath="invites"
+              />
             }
           />
 
@@ -64,6 +68,7 @@ export default function Routing() {
               <Articles
                 categories={PROGRAMME_CATEGORY}
                 categoryName="Programmes"
+                namePath="programmes"
               />
             }
           />
@@ -74,6 +79,7 @@ export default function Routing() {
               <Articles
                 categories={EXPOSANT_CATEGORY}
                 categoryName="Exposants"
+                namePath="exposants"
               />
             }
           />
@@ -84,6 +90,7 @@ export default function Routing() {
               <Articles
                 categories={PARTENAIRE_CATEGORY}
                 categoryName="Partenaires"
+                namePath="partenaires"
               />
             }
           />
@@ -94,6 +101,7 @@ export default function Routing() {
               <Billetterie
                 categories={BILLETTERIE_CATEGORY}
                 categoryName="Billetterie"
+                namePath="billetterie"
               />
             }
           />

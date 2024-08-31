@@ -10,7 +10,7 @@ import { SALON_ID, URL } from "../utils/config";
 import useMedia from "../utils/useMedia";
 import Card from "./Card";
 
-export default function Articles({ categoryName, categories }) {
+export default function Articles({ categoryName, categories, namePath }) {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [posts, setPosts] = useState([]);
@@ -19,7 +19,7 @@ export default function Articles({ categoryName, categories }) {
 
   ReactGA.send({
     hitType: "pageview",
-    page: "/",
+    page: namePath,
     title: categoryName,
   });
 

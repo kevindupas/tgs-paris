@@ -7,7 +7,7 @@ import Tickets from "../Home/components/Tickets";
 import { BILLETTERIE_CATEGORY } from "../utils/config";
 import useScript from "../utils/useScript";
 
-export default function Billetterie() {
+export default function Billetterie(namePath, categoryName) {
   const { config } = useSettings();
   useScript(`https://www.billetweb.fr/js/export.js?nnn=${Date.now()}`);
 
@@ -15,8 +15,8 @@ export default function Billetterie() {
 
   ReactGA.send({
     hitType: "pageview",
-    page: "/",
-    title: "Billletterie",
+    page: namePath,
+    title: categoryName,
   });
 
   return (
