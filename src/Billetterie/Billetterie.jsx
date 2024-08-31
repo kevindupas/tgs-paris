@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
-import React from "react";
+import React, { useEffect } from "react";
+import ReactGA from "react-ga4";
 import CategoryImage from "../components/CategoryImage";
 import { useSettings } from "../context/ConfigurationContext";
 import Tickets from "../Home/components/Tickets";
@@ -10,13 +11,15 @@ export default function Billetterie(namePath, categoryName) {
   const { config } = useSettings();
   useScript(`https://www.billetweb.fr/js/export.js?nnn=${Date.now()}`);
 
-  if (!config || Object.entries(config).length === 0) return null;
+  useEffect(() => {
+    ReactGA.event({
+      category: "Billetterie",
+      action: "Page Billetterie",
+      label: "Billetterie",
+    });
+  }, []);
 
-  //   ReactGA.send({
-  //     hitType: "pageview",
-  //     page: namePath,
-  //     title: categoryName,
-  //   });
+  if (!config || Object.entries(config).length === 0) return null;
 
   return (
     <>

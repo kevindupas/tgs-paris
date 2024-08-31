@@ -1,6 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import React, { useState } from "react";
-
+import React, { useEffect, useState } from "react";
+import ReactGA from "react-ga4";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Articles from "./Articles/Articles";
 import ArticlesDetails from "./Articles/ArticlesDetails";
@@ -37,8 +37,21 @@ export default function Routing() {
   const { config } = useSettings();
 
   if (!config || Object.entries(config).length === 0) return null;
+  useEffect(() => {
+    const sendPageView = () => {
+      ReactGA.send({ hitType: "pageview", page: window.location.pathname });
+    };
 
-  //   ReactGA.initialize("G-TKTPJYEGVD");
+    // Envoyer une vue de page lors du premier chargement
+    sendPageView();
+
+    // Écouter les changements d'URL
+    window.addEventListener("popstate", sendPageView);
+
+    return () => {
+      window.removeEventListener("popstate", sendPageView);
+    };
+  }, []);
 
   return (
     <BrowserRouter>

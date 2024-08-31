@@ -25,12 +25,6 @@ export default function Home() {
 
   const { config } = useSettings();
 
-  //   ReactGA.send({
-  //     hitType: "pageview",
-  //     page: "/",
-  //     title: "Home",
-  //   });
-
   return (
     <div className="bg-[url('/dist/images/pattern-dark.jpeg')] bg-repeat h-full w-full">
       <main className="block">
