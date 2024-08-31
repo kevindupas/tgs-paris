@@ -3,7 +3,6 @@
 /* eslint-disable no-unused-vars */
 import _ from "lodash";
 import React, { useEffect, useState } from "react";
-import ReactGA from "react-ga4";
 import { Link } from "react-router-dom";
 import CategoryImage from "../components/CategoryImage";
 import Loader from "../components/Loader";
@@ -14,11 +13,11 @@ export default function Faq() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [faq, setFaq] = useState([]);
 
-  ReactGA.send({
-    hitType: "pageview",
-    page: "/faqs",
-    title: "Faqs",
-  });
+  //   ReactGA.send({
+  //     hitType: "pageview",
+  //     page: "/faqs",
+  //     title: "Faqs",
+  //   });
 
   useEffect(() => {
     const options = {
