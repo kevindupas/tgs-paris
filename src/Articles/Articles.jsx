@@ -16,11 +16,11 @@ export default function Articles({ categoryName, categories, namePath }) {
   const [activeTab, setActiveTab] = useState("Tous");
   const isDesktop = useMedia("(min-width: 900px)");
 
-  //   ReactGA.send({
-  //     hitType: "pageview",
-  //     page: namePath,
-  //     title: categoryName,
-  //   });
+  ReactGA.send({
+    hitType: "pageview",
+    page: namePath,
+    title: categoryName,
+  });
 
   useEffect(() => {
     const options = {

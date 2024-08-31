@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
 import React from "react";
+import ReactGA from "react-ga4";
 import Video from "./components/Video";
 import VideoMobile from "./components/VideoMobile";
 // import Countdown from './components/Countdown';
@@ -24,6 +25,12 @@ export default function Home() {
   const isDesktop = useMedia("(min-width: 900px)");
 
   const { config } = useSettings();
+
+  ReactGA.send({
+    hitType: "pageview",
+    page: "/",
+    title: "Home",
+  });
 
   return (
     <div className="bg-[url('/dist/images/pattern-dark.jpeg')] bg-repeat h-full w-full">
