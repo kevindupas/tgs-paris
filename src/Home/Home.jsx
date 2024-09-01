@@ -29,7 +29,7 @@ export default function Home() {
   ReactGA.send({
     hitType: "pageview",
     page: "/",
-    title: "Home",
+    title: "Accueil",
   });
 
   return (

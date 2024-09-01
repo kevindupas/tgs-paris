@@ -18,7 +18,7 @@ export default defineConfig({
       },
     },
     rollupOptions: {
-      // external: ["react-ga4"], // Supprimez cette ligne
+      // external: ["react-ga4"],
     },
   },
 });

@@ -1,10 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { useEffect, useState } from "react";
+import ReactGA from "react-ga4";
 import { createGlobalStyle } from "styled-components";
-import useScript from "../utils/useScript";
-import { SALON_ID, URL } from "../utils/config";
 import Loader from "../components/Loader";
 import { useSettings } from "../context/ConfigurationContext";
+import { SALON_ID, URL } from "../utils/config";
+import useScript from "../utils/useScript";
 
 const GlobalStyle = createGlobalStyle`
   ul {
@@ -22,6 +23,12 @@ export default function Presse() {
   const [presses, setPresses] = useState(false);
 
   if (!config || Object.entries(config).length === 0) return null;
+
+  ReactGA.send({
+    hitType: "pageview",
+    page: "/presse",
+    title: "Presse",
+  });
 
   useEffect(() => {
     const options = {

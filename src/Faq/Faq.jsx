@@ -13,12 +13,6 @@ export default function Faq() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [faq, setFaq] = useState([]);
 
-  //   ReactGA.send({
-  //     hitType: "pageview",
-  //     page: "/faqs",
-  //     title: "Faqs",
-  //   });
-
   useEffect(() => {
     const options = {
       method: "GET",
