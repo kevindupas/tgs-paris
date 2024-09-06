@@ -1,4 +1,3 @@
-import { addScriptDefault, setup } from "meta-pixel";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import ReactGA from "react-ga4";
@@ -9,33 +8,14 @@ import Routing from "./Routing";
 
 const TRACKING_ID = "G-TKTPJYEGVD";
 ReactGA.initialize(TRACKING_ID);
+// ReactGA.send("pageview");
 
-const META_PIXEL_ID = "r6lg0CsbFMLFz5j7kxv35J";
-
-// Initialisation de Meta Pixel
-const fbq = addScriptDefault();
-const { $fbq } = setup(fbq).init(META_PIXEL_ID).pageView();
-
-const App = () => {
-  React.useEffect(() => {
-    ReactGA.send("pageview");
-    $fbq("track", "PageView");
-  }, []);
-
-  return (
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
     <ConfigurationProvider>
       <LoaderProvider>
         <Routing />
       </LoaderProvider>
     </ConfigurationProvider>
-  );
-};
-
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <App />
   </React.StrictMode>
 );
-
-// Exportez fbq pour l'utiliser dans d'autres parties de votre application si nécessaire
-export { fbq };
