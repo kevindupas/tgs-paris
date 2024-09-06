@@ -7,6 +7,7 @@ import Billetterie from "./Billetterie/Billetterie";
 import Cookie from "./components/Cookie";
 
 import Facebook from "./components/Facebook";
+import FacebookTest from "./components/FacebookTest";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import MenuOverlay from "./components/MenuOverlay";
@@ -47,8 +48,9 @@ export default function Routing() {
       <Header navbarOpen={navbarOpen} setNavbarOpen={setNavbarOpen} />
       <MenuOverlay navbarOpen={navbarOpen} setNavbarOpen={setNavbarOpen} />
       <div className="flex-grow">
-        <StackAdaptPixel />
         <Facebook />
+        <FacebookTest />
+        <StackAdaptPixel />
         <Routes>
           <Route path="/" element={<Home />} />
 
