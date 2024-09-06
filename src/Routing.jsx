@@ -5,10 +5,10 @@ import Articles from "./Articles/Articles";
 import ArticlesDetails from "./Articles/ArticlesDetails";
 import Billetterie from "./Billetterie/Billetterie";
 import Cookie from "./components/Cookie";
+import Facebook from "./components/Facebook";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import MenuOverlay from "./components/MenuOverlay";
-import MetaPixel from "./components/MetaPixel";
 import { useSettings } from "./context/ConfigurationContext";
 import Exposants from "./Exposants/Exposants";
 import FaqWithSearch from "./Faq/FaqWithSearch";
@@ -40,7 +40,7 @@ export default function Routing() {
 
   return (
     <BrowserRouter>
-      <MetaPixel />
+      <Facebook />
       <ScrollToTop />
       <Cookie storageKey="cookie" storageValue="ok" />
       <Header navbarOpen={navbarOpen} setNavbarOpen={setNavbarOpen} />
