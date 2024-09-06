@@ -41,12 +41,12 @@ export default function Routing() {
 
   return (
     <BrowserRouter>
-      <StackAdaptPixel />
       <ScrollToTop />
       <Cookie storageKey="cookie" storageValue="ok" />
       <Header navbarOpen={navbarOpen} setNavbarOpen={setNavbarOpen} />
       <MenuOverlay navbarOpen={navbarOpen} setNavbarOpen={setNavbarOpen} />
       <div className="flex-grow">
+        <StackAdaptPixel />
         <Routes>
           <Route path="/" element={<Home />} />
 

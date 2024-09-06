@@ -5,6 +5,7 @@ import ReactGA from "react-ga4";
 import Video from "./components/Video";
 import VideoMobile from "./components/VideoMobile";
 // import Countdown from './components/Countdown';
+import StackAdaptPixel from "../components/StackAdaptPixel";
 import { useSettings } from "../context/ConfigurationContext";
 import { INVITE_CATEGORY, PROGRAMME_CATEGORY, SALON_ID } from "../utils/config";
 import useMedia from "../utils/useMedia";
@@ -34,6 +35,7 @@ export default function Home() {
 
   return (
     <div className="bg-[url('/dist/images/pattern-dark.jpeg')] bg-repeat h-full w-full">
+      <StackAdaptPixel />
       <main className="block">
         {isDesktop ? (
           <Video
