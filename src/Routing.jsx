@@ -41,7 +41,6 @@ export default function Routing() {
   return (
     <BrowserRouter>
       <MetaPixel />
-      {/* <Facebook /> */}
       <ScrollToTop />
       <Cookie storageKey="cookie" storageValue="ok" />
       <Header navbarOpen={navbarOpen} setNavbarOpen={setNavbarOpen} />

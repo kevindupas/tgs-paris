@@ -1,45 +1,26 @@
 import React, { useEffect } from "react";
+import useScript from "../utils/useScript";
 
 const MetaPixel = () => {
+  // Utiliser le hook pour charger le script
+  useScript("https://tags.srv.stackadapt.com/events.js");
+
   useEffect(() => {
-    const script = document.createElement("script");
-    script.async = true;
-    script.innerHTML = `
-      !(function (s, a, e, v, n, t, z) {
-        if (s.saq) return;
-        n = s.saq = function () {
-          n.callMethod
-            ? n.callMethod.apply(n, arguments)
-            : n.queue.push(arguments);
-        };
-        if (!s._saq) s._saq = n;
-        n.push = n;
-        n.loaded = !0;
-        n.version = "1.0";
-        n.queue = [];
-        t = a.createElement(e);
-        t.async = !0;
-        t.src = v;
-        z = a.getElementsByTagName(e)[0];
-        z.parentNode.insertBefore(t, z);
-      })(
-        window,
-        document,
-        "script",
-        "https://tags.srv.stackadapt.com/events.js"
-      );
-      saq("conv", "r6lg0CsbFMLFz5j7kxv35J", {
-        revenue: "remplacer",
-        "product name": "remplacer",
-      });
-    `;
-
-    document.body.appendChild(script);
-
-    // Nettoyage si nécessaire
-    return () => {
-      document.body.removeChild(script);
-    };
+    // Initialiser saq une fois le script chargé
+    if (!window.saq) {
+      window.saq = function () {
+        window.saq.callMethod
+          ? window.saq.callMethod.apply(window.saq, arguments)
+          : window.saq.queue.push(arguments);
+      };
+      window.saq.queue = [];
+      window.saq.loaded = true;
+      window.saq.version = "1.0";
+    }
+    window.saq("conv", "r6lg0CsbFMLFz5j7kxv35J", {
+      revenue: "remplacer",
+      "product name": "remplacer",
+    });
   }, []);
 
   return (
