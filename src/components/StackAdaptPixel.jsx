@@ -1,53 +1,41 @@
-import React from "react";
-import { Helmet, HelmetProvider } from "react-helmet-async";
+import React, { useEffect } from "react";
 
 const StackAdaptPixel = () => {
+  useEffect(() => {
+    // Créer et insérer le script du Pixel Meta/Facebook
+    const script = document.createElement("script");
+    script.async = true;
+    script.innerHTML = `
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', 'r6lg0CsbFMLFz5j7kxv35J'); 
+      fbq('track', 'PageView');
+    `;
+
+    document.body.appendChild(script);
+
+    // Fonction de nettoyage
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
-    <HelmetProvider>
-      <Helmet>
-        <script id="stackadapt-pixel-script" type="text/javascript">
-          {`
-          !(function (s, a, e, v, n, t, z) {
-            if (s.saq) return;
-            n = s.saq = function () {
-              n.callMethod
-                ? n.callMethod.apply(n, arguments)
-                : n.queue.push(arguments);
-            };
-            if (!s._saq) s._saq = n;
-            n.push = n;
-            n.loaded = !0;
-            n.version = "1.0";
-            n.queue = [];
-            t = a.createElement(e);
-            t.async = !0;
-            t.src = v;
-            z = a.getElementsByTagName(e)[0];
-            z.parentNode.insertBefore(t, z);
-          })(
-            window,
-            document,
-            "script",
-            "https://tags.srv.stackadapt.com/events.js"
-          );
-          saq("conv", "r6lg0CsbFMLFz5j7kxv35J", {
-            revenue: "remplacer",
-            "product name": "remplacer",
-          });
-        `}
-        </script>
-        <noscript id="stackadapt-pixel-image">
-          {`
-            <img
-              src="https://tags.srv.stackadapt.com/conv?cid=r6lg0CsbFMLFz5j7kxv35J&sa_conv_data_revenue=remplacer&sa_conv_data_product%20name=remplacer"
-              width="1"
-              height="1"
-              alt="StackAdapt"
-            />
-          `}
-        </noscript>
-      </Helmet>
-    </HelmetProvider>
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        style={{ display: "none" }}
+        src="https://www.facebook.com/tr?id=r6lg0CsbFMLFz5j7kxv35J&ev=PageView&noscript=1"
+        alt="Meta Pixel"
+      />
+    </noscript>
   );
 };
 
