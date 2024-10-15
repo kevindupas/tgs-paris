@@ -30,7 +30,7 @@ export default function Billetterie(namePath, categoryName) {
         <section className="pb-36">
           <Tickets />
           <div className="max-w-[1200px] m-auto">
-            <h1 className="mb-2 text-center font-heading_bold text-[40px] lg:text-[38px] tracking-[0.566667px] leading-[.95] uppercase text-black">
+            <h1 className="mb-2 text-center font-oswald text-[40px] lg:text-[38px] tracking-[0.566667px] leading-[.95] uppercase text-black">
               {config.event_date}
             </h1>
             <ul className="grid">

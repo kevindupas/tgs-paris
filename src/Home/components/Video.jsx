@@ -3,78 +3,66 @@
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable react/no-danger */
 /* eslint-disable jsx-a11y/alt-text */
-import React, { useContext } from 'react';
-import { Fade } from 'react-awesome-reveal';
-import { useSettings } from '../../context/ConfigurationContext';
-import { LoaderContext } from '../../context/LoaderContext';
+import React, { useContext } from "react";
+import { Fade } from "react-awesome-reveal";
+import { useSettings } from "../../context/ConfigurationContext";
+import { LoaderContext } from "../../context/LoaderContext";
 
-export default function Video({
-    className,
-    source,
-}) {
-    const { config } = useSettings();
-    const { isLoading } = useContext(LoaderContext);
+export default function Video({ className, source }) {
+  const { config } = useSettings();
+  const { isLoading } = useContext(LoaderContext);
 
-    if (!config || Object.entries(config).length === 0) return null;
+  if (!config || Object.entries(config).length === 0) return null;
 
-    return (
-        <section className="relative h-[calc(100vh-80px)]">
-            <div className="absolute lg:right-0 bottom-48 xl:right-28  lg:bottom-12 z-20">
-                {isLoading === false && (
-                    <Fade delay={500} direction="up" triggerOnce>
+  return (
+    <section className="relative h-[calc(100vh-80px)]">
+      <div className="absolute lg:right-0 bottom-48 xl:right-28  lg:bottom-12 z-20">
+        {isLoading === false && (
+          <Fade delay={500} direction="up" triggerOnce>
+            <blockquote className="text-white font-oswald tracking-[0.566667px] leading-tight indent-0 uppercase text-6xl lg:text-6xl fix-width border-l-[15px] border-[#E97665] pl-5 py-4 relative">
+              <span
+                className="drop-shadow-2xl"
+                style={{
+                  transform: "translate(0px, 0px)",
+                  opacity: "1",
+                  visibility: "inherit",
+                }}
+              >
+                {" "}
+                {config.event_date}
+              </span>
+            </blockquote>
+          </Fade>
+        )}
+      </div>
 
-                        <blockquote className="text-white font-heading_bold tracking-[0.566667px] leading-[.95] indent-0 uppercase text-5xl lg:text-5xl fix-width border-l-[15px] border-[#E97665] pl-5 py-4 relative">
-                            <span
-                                className="drop-shadow-2xl"
-                                style={{
-                                    transform:  'translate(0px, 0px)',
-                                    opacity:    '1',
-                                    visibility: 'inherit',
-                                }}
-                            >
-                                {' '}
-                                {config.event_date}
-                            </span>
-                        </blockquote>
-
-                    </Fade>
-
-                )}
-
-            </div>
-
-            <div className="absolute w-20 lg:w-[216px] left-3 lg:left-60 -bottom-14 lg:bottom-[-53px] z-10">
-                {isLoading === false && (
-                    <Fade delay={500} direction="up" triggerOnce>
-                        <img
-                            style={{
-                                transform:  'translate(0px, 0px)',
-                                opacity:    '1',
-                                visibility: 'inherit',
-                            }}
-                            src="/dist/images/icons-test.png"
-                            alt=""
-                        />
-                    </Fade>
-                )}
-            </div>
-            <div
-                className="absolute bottom-0 left-0 mx-auto top-0 md:right-[calc(50%-300px)] lg:right-[calc(50%-516px)]"
-            >
-
-                <div className="relative h-full w-full blur-[3px] lg:blur-none">
-                    <video
-                        loop
-                        muted
-                        autoPlay
-                        playsInline
-                        src={source}
-                        className={className}
-                    />
-
-                </div>
-
-            </div>
-        </section>
-    );
+      <div className="absolute w-20 lg:w-[216px] left-3 lg:left-60 -bottom-14 lg:bottom-[-53px] z-10">
+        {isLoading === false && (
+          <Fade delay={500} direction="up" triggerOnce>
+            <img
+              style={{
+                transform: "translate(0px, 0px)",
+                opacity: "1",
+                visibility: "inherit",
+              }}
+              src="/dist/images/icons-test.png"
+              alt=""
+            />
+          </Fade>
+        )}
+      </div>
+      <div className="absolute bottom-0 left-0 mx-auto top-0 md:right-[calc(50%-300px)] lg:right-[calc(50%-516px)]">
+        <div className="relative h-full w-full blur-[3px] lg:blur-none">
+          <video
+            loop
+            muted
+            autoPlay
+            playsInline
+            src={source}
+            className={className}
+          />
+        </div>
+      </div>
+    </section>
+  );
 }
