@@ -305,7 +305,7 @@ export default function ArticlesDetails() {
                   className="w-full lg:w-96 h-full bg-white mt-9 border border-gray-400 shadow-lg rounded-lg"
                 >
                   <div className="relative p-6 space-y-6 lg:p-8">
-                    <h3 className="text-3xl text-center text-[#CA1D16] uppercase font-bold underline">
+                    <h3 className="text-3xl text-center text-blue-400 uppercase font-bold underline">
                       Infos planning
                     </h3>
                     <div />
