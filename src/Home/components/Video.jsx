@@ -3,7 +3,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable react/no-danger */
 /* eslint-disable jsx-a11y/alt-text */
-import React, { useContext } from "react";
+import React, { useContext, useRef, useEffect } from "react";
 import { Fade } from "react-awesome-reveal";
 import { useSettings } from "../../context/ConfigurationContext";
 import { LoaderContext } from "../../context/LoaderContext";
@@ -11,6 +11,47 @@ import { LoaderContext } from "../../context/LoaderContext";
 export default function Video({ className }) {
   const { config } = useSettings();
   const { isLoading } = useContext(LoaderContext);
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    // Fonction pour essayer de lancer la vidéo
+    const playVideo = async () => {
+      try {
+        if (videoRef.current && !isLoading) {
+          // Forcer la lecture
+          const playPromise = videoRef.current.play();
+
+          if (playPromise !== undefined) {
+            playPromise.catch((error) => {
+              console.log("Autoplay prevented:", error);
+
+              // Ajouter un écouteur d'événements pour le premier clic/toucher sur la page
+              const handleUserInteraction = () => {
+                if (videoRef.current) {
+                  videoRef.current.play();
+                }
+                document.removeEventListener(
+                  "touchstart",
+                  handleUserInteraction
+                );
+                document.removeEventListener("click", handleUserInteraction);
+              };
+
+              document.addEventListener("touchstart", handleUserInteraction);
+              document.addEventListener("click", handleUserInteraction);
+            });
+          }
+        }
+      } catch (err) {
+        console.error("Erreur de lecture vidéo:", err);
+      }
+    };
+
+    // Essayer de lire la vidéo quand le composant est monté et que isLoading est false
+    if (!isLoading) {
+      playVideo();
+    }
+  }, [isLoading]); // Relancer l'effet quand isLoading change
 
   if (!config || Object.entries(config).length === 0) return null;
 
@@ -54,10 +95,12 @@ export default function Video({ className }) {
       <div className="absolute bottom-0 left-0 mx-auto top-0 md:right-[calc(50%-300px)] lg:right-[calc(50%-516px)]">
         <div className="relative h-full w-full blur-[3px] lg:blur-none">
           <video
+            ref={videoRef}
             loop
             muted
             autoPlay
             playsInline
+            preload="auto"
             src="/dist/video/paris_manga_new.mp4"
             type="video/mp4"
             className={className}

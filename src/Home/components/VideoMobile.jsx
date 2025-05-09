@@ -1,10 +1,48 @@
-/* eslint-disable react/no-danger */
-/* eslint-disable jsx-a11y/alt-text */
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useSettings } from "../../context/ConfigurationContext";
 
 export default function Video() {
   const { config } = useSettings();
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    // Fonction pour essayer de lancer la vidéo
+    const playVideo = async () => {
+      try {
+        if (videoRef.current) {
+          // Attendre que la vidéo soit chargée
+          await videoRef.current.load();
+          // Forcer la lecture
+          const playPromise = videoRef.current.play();
+
+          if (playPromise !== undefined) {
+            playPromise.catch((error) => {
+              // Si l'autoplay échoue, on peut ajouter un gestionnaire de clic pour lancer la vidéo
+              console.log("Autoplay prevented:", error);
+
+              // Ajouter un écouteur d'événements pour le premier clic/toucher sur la page
+              const handleUserInteraction = () => {
+                videoRef.current.play();
+                document.removeEventListener(
+                  "touchstart",
+                  handleUserInteraction
+                );
+                document.removeEventListener("click", handleUserInteraction);
+              };
+
+              document.addEventListener("touchstart", handleUserInteraction);
+              document.addEventListener("click", handleUserInteraction);
+            });
+          }
+        }
+      } catch (err) {
+        console.error("Erreur de lecture vidéo:", err);
+      }
+    };
+
+    // Essayer de lire la vidéo quand le composant est monté
+    playVideo();
+  }, []);
 
   return (
     <section className="relative h-[calc(100vh-80px)]">
@@ -38,10 +76,12 @@ export default function Video() {
         <div className="relative h-full w-full">
           <div className="absolute top-0 left-0 h-full w-full bg-black opacity-50 z-10"></div>
           <video
+            ref={videoRef}
             loop
             muted
             autoPlay
             playsInline
+            preload="auto"
             className="object-cover h-full w-full pt-[5em] z-0"
           >
             <source src="/dist/video/paris_manga_new.mp4" type="video/mp4" />
