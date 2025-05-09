@@ -180,7 +180,7 @@ export default function Card({ value }) {
             </div>
           </div>
           <Link
-            className="news-card__read-more bg-black hover:bg-blue-400 text-[#E97665] hover:text-black"
+            className="news-card__read-more bg-black hover:bg-[#ec6f15] text-orange-500 hover:text-black"
             to={`/post/${value.id}`}
           >
             En savoir plus
