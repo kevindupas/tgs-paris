@@ -8,7 +8,7 @@ import { Fade } from "react-awesome-reveal";
 import { useSettings } from "../../context/ConfigurationContext";
 import { LoaderContext } from "../../context/LoaderContext";
 
-export default function Video({ className, source }) {
+export default function Video({ className }) {
   const { config } = useSettings();
   const { isLoading } = useContext(LoaderContext);
 
@@ -58,7 +58,8 @@ export default function Video({ className, source }) {
             muted
             autoPlay
             playsInline
-            src={source}
+            src="/dist/video/paris_manga_new.mp4"
+            type="video/mp4"
             className={className}
           />
         </div>

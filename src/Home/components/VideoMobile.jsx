@@ -44,7 +44,7 @@ export default function Video() {
             playsInline
             className="object-cover h-full w-full pt-[5em] z-0"
           >
-            <source src="/dist/video/paris_manga.mp4" type="video/mp4" />
+            <source src="/dist/video/paris_manga_new.mp4" type="video/mp4" />
           </video>
         </div>
       </div>
