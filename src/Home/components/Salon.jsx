@@ -38,7 +38,7 @@ export default function Salon() {
             </div>
           </div>
         </div>
-        <div className="absolute w-full h-full overflow-hidden">
+        <div className="absolute w-full h-full overflow-hidden z-10">
           <div className="absolute right-0 bottom-0 h-28 w-28">
             <div
               className={clsx(

@@ -31,7 +31,7 @@ export default function InviteTest({ category, salon }) {
 
   return (
     // TODO: Modifier les nombres dans l'admin salon
-    <section className="relative w-full py-16 bg-[#f3f3f3]">
+    <section className="relative w-full py-16 bg-[#f3f3f3] z-50">
       <div className="lg:max-w-[1200px] lg:w-[calc(100%-30px)] mx-auto flex justify-start items-start flex-wrap">
         <div className="mx-auto max-w-2xl mb-10">
           <h1 className="mb-2 text-center font-oswald text-[40px] lg:text-[48px] tracking-[0.566667px] leading-[.95] uppercase text-black">
