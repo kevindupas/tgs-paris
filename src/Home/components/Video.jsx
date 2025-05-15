@@ -95,14 +95,11 @@ export default function Video({ className }) {
       <div className="absolute bottom-0 left-0 mx-auto top-0 md:right-[calc(50%-300px)] lg:right-[calc(50%-516px)]">
         <div className="relative h-full w-full blur-[3px] lg:blur-none">
           <video
-            ref={videoRef}
             loop
             muted
             autoPlay
             playsInline
-            preload="auto"
-            src="/dist/video/paris_manga_new.mp4"
-            type="video/mp4"
+            src={source}
             className={className}
           />
         </div>

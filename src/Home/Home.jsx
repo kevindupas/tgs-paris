@@ -38,7 +38,10 @@ export default function Home() {
       <StackAdaptPixel />
       <main className="block">
         {isDesktop ? (
-          <Video className="object-cover h-full w-full pt-[5em]" />
+          <Video
+            className="object-cover h-full w-full pt-[5em]"
+            source="/dist/video/paris_manga.webm"
+          />
         ) : (
           <VideoMobile />
         )}

@@ -322,7 +322,7 @@ export default function ArticlesDetails() {
 
                     <Link
                       to="/billetterie"
-                      className="block w-full py-3 px-6 text-center rounded-xl transition bg-orange-500 hover:bg-[#ec6f15]"
+                      className="block w-full py-3 px-6 text-center rounded-xl transition bg-[#E97665] hover:bg-[#ec6f15]"
                     >
                       <span className="text-white font-semibold">
                         Acheter vos billets
@@ -373,7 +373,7 @@ export default function ArticlesDetails() {
               <div className="my-8">
                 <button
                   type="button"
-                  className="inline-flex items-center px-6 py-3 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-orange-500"
+                  className="inline-flex items-center px-6 py-3 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-[#E97665]"
                   onClick={() => navigate(-1)}
                 >
                   <img

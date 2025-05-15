@@ -46,7 +46,7 @@ export default function InviteTest({ category, salon }) {
                 if (
                   data.forward === true &&
                   data.published_at !== null &&
-                  data.published_at < dayjs().format("YYYY-MM-DD H:s")
+                  dayjs.utc(data.published_at).local().isBefore(dayjs())
                 ) {
                   return (
                     <Link

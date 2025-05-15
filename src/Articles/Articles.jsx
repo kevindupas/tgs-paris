@@ -118,11 +118,7 @@ export default function Articles({ categoryName, categories, namePath }) {
                 if (value.published_at !== null) {
                   if (
                     value.published_at !== null &&
-                    dayjs
-                      .utc(value.published_at)
-                      .local()
-                      // .subtract(1, "hour")
-                      .isBefore(dayjs())
+                    dayjs.utc(value.published_at).local().isBefore(dayjs())
                   ) {
                     return <Card value={value} key={`post-${uuidv4()}`} />;
                   }
