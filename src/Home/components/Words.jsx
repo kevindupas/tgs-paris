@@ -27,6 +27,14 @@ export default function Words() {
                 Culture japonaise
               </Link>
             </li>
+            <li className="mt-[17px] lg:mt-[23px] lg:ml-[75px]">
+              <Link
+                to="programmes"
+                className="text-[30px] lg:text-[40px] font-oswald tracking-[0.566667px] leading-[.95] uppercase artiste"
+              >
+                Cosplay
+              </Link>
+            </li>
           </ul>{" "}
           <ul className="flex justify-center flex-wrap lg:ml-[-75px]">
             <li className="mt-[17px] lg:mt-[23px] lg:ml-[75px]">
@@ -66,7 +74,7 @@ export default function Words() {
                 to="programmes"
                 className="text-[30px] lg:text-[40px] text-white font-oswald tracking-[0.566667px] leading-[.95] uppercase"
               >
-                cinema
+                cinéma
               </Link>
             </li>
           </ul>
