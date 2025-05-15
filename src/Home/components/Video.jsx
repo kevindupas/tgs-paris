@@ -1,17 +1,21 @@
-/* eslint-disable no-console */
-/* eslint-disable no-new */
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable react/no-danger */
-/* eslint-disable jsx-a11y/alt-text */
-import React, { useContext, useRef, useEffect } from "react";
+import React, { useContext, useRef, useEffect, useState } from "react";
 import { Fade } from "react-awesome-reveal";
 import { useSettings } from "../../context/ConfigurationContext";
 import { LoaderContext } from "../../context/LoaderContext";
 
-export default function Video({ source, className }) {
+export default function Video({ source, className, safariSource }) {
   const { config } = useSettings();
   const { isLoading } = useContext(LoaderContext);
   const videoRef = useRef(null);
+  const [isSafari, setIsSafari] = useState(false);
+
+  useEffect(() => {
+    // Détection de Safari
+    const isSafariBrowser = /^((?!chrome|android).)*safari/i.test(
+      navigator.userAgent
+    );
+    setIsSafari(isSafariBrowser);
+  }, []);
 
   useEffect(() => {
     // Fonction pour essayer de lancer la vidéo
@@ -55,6 +59,9 @@ export default function Video({ source, className }) {
 
   if (!config || Object.entries(config).length === 0) return null;
 
+  // Utiliser la source Safari si disponible et si l'utilisateur est sur Safari
+  const videoSource = isSafari && safariSource ? safariSource : source;
+
   return (
     <section className="relative h-[calc(100vh-80px)]">
       <div className="absolute lg:right-0 bottom-48 xl:right-28  lg:bottom-12 z-20">
@@ -95,11 +102,12 @@ export default function Video({ source, className }) {
       <div className="absolute bottom-0 left-0 mx-auto top-0 md:right-[calc(50%-300px)] lg:right-[calc(50%-516px)]">
         <div className="relative h-full w-full blur-[3px] lg:blur-none">
           <video
+            ref={videoRef}
             loop
             muted
             autoPlay
             playsInline
-            src={source}
+            src={videoSource}
             className={className}
           />
         </div>

@@ -41,6 +41,7 @@ export default function Home() {
           <Video
             className="object-cover h-full w-full pt-[5em]"
             source="/dist/video/paris_manga.webm"
+            safariSource="/dist/video/paris_manga_safari.mp4"
           />
         ) : (
           <VideoMobile />
