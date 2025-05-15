@@ -8,7 +8,7 @@ import { Fade } from "react-awesome-reveal";
 import { useSettings } from "../../context/ConfigurationContext";
 import { LoaderContext } from "../../context/LoaderContext";
 
-export default function Video({ className }) {
+export default function Video({ source, className }) {
   const { config } = useSettings();
   const { isLoading } = useContext(LoaderContext);
   const videoRef = useRef(null);
