@@ -79,6 +79,21 @@ export default function InfosPratiquesDetails() {
                 <section className="pb-10 bg-[#f3f3f3]">
                     <article className="relative">
                         <div className="relative z-10 pt-[100px] pb-[95px] w-full px-8 lg:px-0 overflow-x-hidden lg:max-w-[800px] lg:w-[calc(100%-30px)] mx-auto">
+                            {infoId === '50' && (
+                                <div className="mb-8">
+                                    <iframe 
+                                        id="carpool-iframe" 
+                                        title="Espace covoiturage" 
+                                        name="carpool-iframe" 
+                                        width="100%" 
+                                        height="900" 
+                                        allow="fullscreen" 
+                                        frameBorder="0" 
+                                        scrolling="no" 
+                                        src="https://kuhoo.tz/fr/p/da43207d07;embedded=2"
+                                    />
+                                </div>
+                            )}
                             <div className="text-black" dangerouslySetInnerHTML={{ __html: details.content }} />
                         </div>
 
