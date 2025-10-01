@@ -249,7 +249,7 @@ html {
 
 .artiste-black {
   color: transparent;
-  -webkit-text-stroke: 1px #000000;
+  -webkit-text-stroke: 1px #f7f6f6;
 }
 
 .swiper {
