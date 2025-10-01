@@ -89,7 +89,7 @@ export default function SalonMobile() {
                 type="button"
                 className="rounded-lg bg-[#E97665] py-2.5 px-3.5 text-3xl border-2 text-white shadow-sm uppercase font-bold"
               >
-                Accéder à la galerie photo
+                Accéder à la galerie
               </button>
             </a>
           </div>
