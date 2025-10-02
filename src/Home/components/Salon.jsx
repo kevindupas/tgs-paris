@@ -107,7 +107,7 @@ export default function Salon() {
               <a
                 href="https://photos.tgs-paris.fr"
                 target="_blank"
-                className="inline-block text-center text-white cursor-pointer py-5 px-11 font-oswald text-3xl border-4 border-white bg-[#2aade5] rounded-3xl"
+                className="inline-block text-center text-white cursor-pointer py-5 px-11 font-oswald text-3xl border-4 border-white bg-[#2aade5] rounded-3xl hover:text-4xl hover:transition hover:duration-300"
                 rel="noreferrer"
               >
                 Accéder à la galerie !
