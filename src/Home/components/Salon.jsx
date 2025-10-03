@@ -103,11 +103,11 @@ export default function Salon() {
                 </table>
               </div>
             </div>
-            <div className="mt-5 flex justify-center items-center">
+            <div className="mt-5 mb-4 flex justify-center items-center">
               <a
                 href="https://photos.tgs-paris.fr"
                 target="_blank"
-                className="inline-block text-center text-white cursor-pointer py-5 px-11 font-oswald text-3xl border-4 border-white bg-[#2aade5] rounded-3xl hover:text-4xl hover:transition hover:duration-300"
+                className="inline-block text-center text-white cursor-pointer py-3 px-8 font-oswald text-3xl border-4 border-white bg-[#2aade5] rounded-3xl transform transition duration-300 hover:scale-110"
                 rel="noreferrer"
               >
                 Accéder à la galerie !
