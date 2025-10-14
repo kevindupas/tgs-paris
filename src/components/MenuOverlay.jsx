@@ -66,6 +66,17 @@ export default function MenuOverlay({ navbarOpen, setNavbarOpen }) {
                                     du salon
                                 </a>
                             </div>
+                            <div>
+                                <Link
+                                    to="cosplay"
+                                    className="relative flex text-[40px] lg:text-[68px] font-microgramma tracking-[0.566667px] leading-[.95] uppercase menu__item-link hover:text-[#E97665]"
+                                    onClick={() => {
+                                        setNavbarOpen(false);
+                                    }}
+                                >
+                                    Coupe de France Cosplay
+                                </Link>
+                            </div>
                             <div className="flex">
                                 <Link
                                     to="partenaires"
