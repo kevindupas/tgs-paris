@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-const Card = ({ key, title }) => {
+const Card = ({ key, title, slug, content, featured_image, instagram, twitch, twitter, photographer, photographer_link}) => {
   return (
-    <div className="flex flex-col" key={key}>
-      <StyledWrapper className="flex items-center justify-center p-4 bg-[#e7e2d8] lg:flex-row flex-col gap-2">
+    <div className="flex" key={key}>
+      <StyledWrapper className="flex items-center justify-center p-4 bg-[#e7e2d8] gap-2">
         <div className="card-container">
           <div
             className="comic-card"
@@ -17,38 +17,55 @@ const Card = ({ key, title }) => {
                 <p className="card-username" id="card-username">
                   {title}
                 </p>
-                <p className="card-handle">@cosplay</p>
+                <p className="card-handle">{slug}</p>
               </div>
             </div>
             <div className="card-content">
-              <div className="card-image-container" />
-              <p className="card-caption">descriptions !</p>
+              <div className="card-image-container">{featured_image}</div>
+              <div className="flex flex-row-reverse items-end gap-1 justify-end m-1 p-1">
+                <p>{photographer}</p>
+                <a href={photographer_link}>
+                  <img 
+                    src="../dist/icons/instagram.svg"
+                    className="w-[25px] bg-[#2C509E] hover:bg-[#860000]" 
+                  />
+                </a>
+
+              </div>
+              <p className="card-caption">{content}</p>
             </div>
             <div className="card-actions">
-              <button
+              <a 
+                href={instagram}
                 className="action-button like-button"
-                aria-label="Like Post"
+                aria-label="Instagram"
               >
-                <svg className="action-button-icon" viewBox="0 0 24 24">
-                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                </svg>
-              </button>
-              <button
-                className="action-button comment-button"
-                aria-label="Comment on Post"
+                <img src="../dist/icons/instagram.svg" alt="" className="w-[25px]" />
+              </a>
+
+              <a
+                className="action-button like-button"
+                aria-label="tiktok"
               >
-                <svg className="action-button-icon" viewBox="0 0 24 24">
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-                </svg>
-              </button>
-              <button
-                className="action-button share-button"
-                aria-label="Share Post"
+                {instagram}
+                <img src="../dist/icons/tiktok.svg" alt="" className="w-[25px]" />
+              </a>
+
+              <a
+                className="action-button like-button"
+                aria-label="twitch"
               >
-                <svg className="action-button-icon" viewBox="0 0 24 24">
-                  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
-                </svg>
-              </button>
+                {twitch}
+                <img src="../dist/icons/twitch.svg" alt="" className="w-[25px]" />
+              </a>
+
+              <a
+                className="action-button like-button"
+                aria-label="twitter"
+              >
+                {twitter}
+                <img src="../dist/icons/twitter.svg" alt="" className="w-[25px]" />
+              </a>
             </div>
           </div>
         </div>
@@ -199,7 +216,7 @@ const StyledWrapper = styled.div`
   }
 
   .action-button {
-    background-color: white;
+    background-color: #2C509E;
     border: var(--border-stroke) solid #860000;
     padding: 0.5em;
     cursor: pointer;
