@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Card = ({ key, title, slug, content, featured_image, instagram, twitch, twitter, photographer, photographer_link}) => {
+const Card = ({ key, title, slug, content, featured_image, instagram, twitch, twitter, youtube, website, facebook, photographer, photographer_link}) => {
   return (
     <div className="flex" key={key}>
       <StyledWrapper className="flex items-center justify-center p-4 bg-[#e7e2d8] gap-2">
@@ -65,6 +65,30 @@ const Card = ({ key, title, slug, content, featured_image, instagram, twitch, tw
               >
                 {twitter}
                 <img src="../dist/icons/twitter.svg" alt="" className="w-[25px]" />
+              </a>
+
+              <a
+                className="action-button like-button"
+                aria-label="youtube"
+              >
+                {youtube}
+                <img src="../dist/icons/youtube.svg" alt="" className="w-[25px]" />
+              </a>
+
+              <a
+                className="action-button like-button"
+                aria-label="website"
+              >
+                {website}
+                <img src="../dist/icons/web.svg" alt="" className="w-[25px]" />
+              </a>
+
+              <a
+                className="action-button like-button"
+                aria-label="facebook"
+              >
+                {facebook}
+                <img src="../dist/icons/facebook.svg" alt="" className="w-[25px]" />
               </a>
             </div>
           </div>

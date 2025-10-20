@@ -15,7 +15,7 @@ export default function JuryCosplay(jury) {
 
       <div className="flex flex-row">
         {jury.jury.map((data) => (
-          <Card key={data.id} data={data} title={data.title} slug={data.slug} featured_image={data.featured_image} content={data.content} instagram={data.instagram} photographer={data.photographer} photographer_link={data.photographer_link} twitch={data.twitch} twitter={data.twitter} />
+          <Card key={data.id} data={data} title={data.title} slug={data.slug} featured_image={data.featured_image} content={data.content} instagram={data.instagram} photographer={data.photographer} photographer_link={data.photographer_link} twitch={data.twitch} twitter={data.twitter} youtube={data.youtube} website={data.website} facebook={data.facebook}/>
         ))}
       </div>
     </div>
