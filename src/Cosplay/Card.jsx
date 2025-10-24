@@ -24,7 +24,7 @@ const Card = ({ key, title, slug, content, featured_image, instagram, tiktok, tw
             </div>
             <div className="card-content">
               <div className="card-image-container">
-                <img href={featured_image} className="h-36 w-full z-50" />
+                <img src={featured_image} className="h-48 w-full z-50 object-cover" />
               </div>
               <div className="flex flex-row-reverse items-end gap-1 justify-end m-1 p-1">
                 <p>{photographer}</p>
@@ -211,7 +211,7 @@ const StyledWrapper = styled.div`
 
   .card-image-container {
     width: 100%;
-    height: 9em;
+    height: 11em;
     border-radius: 0.2em;
     border: var(--border-stroke) solid var(--ink-black);
     overflow: hidden;
