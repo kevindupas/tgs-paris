@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-const Card = ({ key, title, slug, content, featured_image, instagram, twitch, twitter, youtube, website, facebook, photographer, photographer_link}) => {
+const Card = ({ key, title, slug, content, featured_image, instagram, tiktok, twitch, twitter, youtube, website, facebook, photographer, photographer_link}) => {
+
+
   return (
     <div className="flex" key={key}>
       <StyledWrapper className="flex items-center justify-center p-4 bg-[#e7e2d8] gap-2">
@@ -21,7 +23,9 @@ const Card = ({ key, title, slug, content, featured_image, instagram, twitch, tw
               </div>
             </div>
             <div className="card-content">
-              <div className="card-image-container">{featured_image}</div>
+              <div className="card-image-container">
+                <img href={featured_image} className="h-36 w-full z-50" />
+              </div>
               <div className="flex flex-row-reverse items-end gap-1 justify-end m-1 p-1">
                 <p>{photographer}</p>
                 <a href={photographer_link}>
@@ -32,64 +36,92 @@ const Card = ({ key, title, slug, content, featured_image, instagram, twitch, tw
                 </a>
 
               </div>
-              <p className="card-caption">{content}</p>
+              <p className="card-caption">
+                <div
+                  dangerouslySetInnerHTML={{
+                     __html: content,
+                  }}
+                />
+              </p>
             </div>
             <div className="card-actions">
-              <a 
-                href={instagram}
-                className="action-button like-button"
-                aria-label="Instagram"
-              >
-                <img src="../dist/icons/instagram.svg" alt="" className="w-[25px]" />
-              </a>
 
-              <a
+              {instagram && (
+                <a 
+                  href={instagram}
+                  className="action-button like-button"
+                  aria-label="Instagram"
+                  target="_blank"
+                >
+                  <img src="../dist/icons/instagram.svg" alt="" className="w-[25px]" />
+                </a> 
+              )}
+              
+              {tiktok && (
+                <a
+                href={tiktok}
                 className="action-button like-button"
                 aria-label="tiktok"
+                target="_blank"
               >
-                {instagram}
                 <img src="../dist/icons/tiktok.svg" alt="" className="w-[25px]" />
               </a>
-
-              <a
+              )}
+              
+              {twitch && (
+                <a
+                href={twitch}
                 className="action-button like-button"
                 aria-label="twitch"
+                target="_blank"
               >
-                {twitch}
                 <img src="../dist/icons/twitch.svg" alt="" className="w-[25px]" />
               </a>
-
-              <a
+              )}
+              
+              {twitter && (
+                <a
+                href={twitter}
                 className="action-button like-button"
                 aria-label="twitter"
+                target="_blank"
               >
-                {twitter}
                 <img src="../dist/icons/twitter.svg" alt="" className="w-[25px]" />
               </a>
+              )}
 
-              <a
+              {youtube && (
+                <a
+                href={youtube}
                 className="action-button like-button"
                 aria-label="youtube"
+                target="_blank"
               >
-                {youtube}
                 <img src="../dist/icons/youtube.svg" alt="" className="w-[25px]" />
               </a>
-
-              <a
+              )}
+              
+              {website && (
+                <a
+                href={website}
                 className="action-button like-button"
                 aria-label="website"
+                target="_blank"
               >
-                {website}
                 <img src="../dist/icons/web.svg" alt="" className="w-[25px]" />
               </a>
-
-              <a
+              )}
+              
+              {facebook && (
+                <a
+                href={facebook}
                 className="action-button like-button"
                 aria-label="facebook"
+                target="_blank"
               >
-                {facebook}
                 <img src="../dist/icons/facebook.svg" alt="" className="w-[25px]" />
               </a>
+              )}
             </div>
           </div>
         </div>
@@ -183,12 +215,8 @@ const StyledWrapper = styled.div`
     border-radius: 0.2em;
     border: var(--border-stroke) solid var(--ink-black);
     overflow: hidden;
-    background-color: var(--accent-blue);
-    background-image: radial-gradient(
-      circle,
-      var(--dot-color) 0.05em,
-      transparent 0.05em
-    );
+    
+    
     background-size: 0.5em 0.5em;
     background-position: 0 0, 0.25em 0.25em;
     transition: transform 0.3s ease;
