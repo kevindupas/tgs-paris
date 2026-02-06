@@ -31,7 +31,7 @@ import {
   PROGRAMME_CATEGORY,
 } from "./utils/config";
 import ScrollToTop from "./utils/ScrollToTop";
-import PageCosplay from "./Cosplay/PageCosplay";
+// import PageCosplay from "./Cosplay/PageCosplay";
 
 export default function Routing() {
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -135,8 +135,8 @@ export default function Routing() {
 
           <Route path="mention_legale" element={<MentionLegale />} />
           <Route path="cgu" element={<ConditionGeneral />} />
-          
-          <Route path="cosplay" element={<PageCosplay />} />
+
+          {/* <Route path="cosplay" element={<PageCosplay />} /> */}
           {/* <Route path="*" element={<NotFound />} /> */}
         </Routes>
       </div>
