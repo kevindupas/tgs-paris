@@ -9,7 +9,7 @@ import Cookie from "./components/Cookie";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import MenuOverlay from "./components/MenuOverlay";
-import StackAdaptPixel from "./components/StackAdaptPixel";
+import FacebookPixel from "./components/FacebookPixel";
 import { useSettings } from "./context/ConfigurationContext";
 import Exposants from "./Exposants/Exposants";
 import FaqWithSearch from "./Faq/FaqWithSearch";
@@ -47,7 +47,7 @@ export default function Routing() {
       <Header navbarOpen={navbarOpen} setNavbarOpen={setNavbarOpen} />
       <MenuOverlay navbarOpen={navbarOpen} setNavbarOpen={setNavbarOpen} />
       <div className="flex-grow">
-        <StackAdaptPixel />
+        <FacebookPixel />
         <Routes>
           <Route path="/" element={<Home />} />
 
