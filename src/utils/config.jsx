@@ -1,4 +1,4 @@
-export const URL = 'https://admin.tgs-production.fr';
+export const URL = "https://admin.tgsevents.fr";
 export const SALON_ID = 5;
 
 export const INVITE_CATEGORY = 31;
