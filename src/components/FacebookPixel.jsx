@@ -30,7 +30,7 @@ const FacebookPixel = () => {
         window,
         document,
         "script",
-        "https://connect.facebook.net/en_US/fbevents.js"
+        "https://connect.facebook.net/en_US/fbevents.js",
       );
     }
 
@@ -40,7 +40,7 @@ const FacebookPixel = () => {
 
   useEffect(() => {
     // Track PageView on route change
-    // We use a timeout to ensure init has processed if it was just added, 
+    // We use a timeout to ensure init has processed if it was just added,
     // although fbq queue handles this automatically.
     if (window.fbq) {
       window.fbq("track", "PageView");
