@@ -30,6 +30,7 @@ import {
   PARTENAIRE_CATEGORY,
   PROGRAMME_CATEGORY,
 } from "./utils/config";
+import PageViewTracker from "./utils/PageViewTracker";
 import ScrollToTop from "./utils/ScrollToTop";
 // import PageCosplay from "./Cosplay/PageCosplay";
 
@@ -43,6 +44,7 @@ export default function Routing() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <PageViewTracker />
       <Cookie storageKey="cookie" storageValue="ok" />
       <Header navbarOpen={navbarOpen} setNavbarOpen={setNavbarOpen} />
       <MenuOverlay navbarOpen={navbarOpen} setNavbarOpen={setNavbarOpen} />
